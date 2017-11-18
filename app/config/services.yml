@@ -1,0 +1,38 @@
+parameters:
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        # automatically injects dependencies in your services
+        autowire: true
+        # automatically registers your services as commands, event subscribers, etc.
+        autoconfigure: true
+        # this means you cannot fetch services directly from the container via $container->get()
+        # if you need to do this, you can override this setting on individual services
+        public: false
+
+    global.guzzle_client:
+        class: GuzzleHttp\Client
+
+    global.dom_crawler:
+            class: Symfony\Component\DomCrawler\Crawler
+
+    AppBundle\:
+        resource: '../../src/AppBundle/*'
+        # you can exclude directories or files
+        # but if a service is unused, it's removed anyway
+        exclude: '../../src/AppBundle/{Entity,Repository}'
+
+    AppBundle\Library\:
+        resource: '../../src/AppBundle/Library/*'
+        public: true
+
+    AppBundle\Library\HypeSource\NewsArticle\HtmlSourceParserTemplate:
+        arguments:
+            $guzzleClient: "@global.guzzle_client"
+            $crawler: "@global.dom_crawler"
+
+    AppBundle\Repository\HypeSourceRepository:
+        factory: "doctrine:getRepository"
+        arguments:
+            - "AppBundle\\Entity\\HypeSource"
