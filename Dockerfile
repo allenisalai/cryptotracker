@@ -13,5 +13,4 @@ WORKDIR /var/www/html/app
 
 COPY . ./
 
-COPY ./docker/php.ini /usr/local/etc/php/php.ini 
-
+COPY ./docker/php.ini /usr/local/etc/php/php.ini
