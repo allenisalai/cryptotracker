@@ -3,7 +3,9 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Coin;
-use AppBundle\Entity\CoinSnapshot;
+use AppBundle\Entity\CoinDaySnapshot;
+use AppBundle\Entity\CoinHourSnapshot;
+use AppBundle\Entity\CoinMinuteSnapshot;
 use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -30,7 +32,7 @@ class CoinSnapshotApiController extends Controller
      */
     public function coinSnapshotAction($coinSymbol)
     {
-        $coinSnapshotsQB = $this->getDoctrine()->getRepository(CoinSnapshot::class)
+        $coinSnapshotsQB = $this->getDoctrine()->getRepository(CoinHourSnapshot::class)
             ->createQueryBuilder('cs')
             ->select('cs.close, cs.time')
             ->where('cs.coinSymbol = :coin_symbol')

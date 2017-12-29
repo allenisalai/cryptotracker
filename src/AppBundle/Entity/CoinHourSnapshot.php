@@ -6,12 +6,12 @@ use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * CoinSnapshot
+ * CoinHourSnapshot
  *
- * @ORM\Table(name="coin_snapshot")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\CoinSnapshotRepository")
+ * @ORM\Table(name="coin_hour_snapshot")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CoinHourSnapshotRepository")
  */
-class CoinSnapshot
+class CoinHourSnapshot
 {
     /**
      * @var int
@@ -106,9 +106,10 @@ class CoinSnapshot
 
     /**
      * @param string $coinSymbol
-     * @return CoinSnapshot
+     *
+     * @return CoinHourSnapshot
      */
-    public function setCoinSymbol(string $coinSymbol): CoinSnapshot
+    public function setCoinSymbol(string $coinSymbol): CoinHourSnapshot
     {
         $this->coinSymbol = $coinSymbol;
         return $this;
@@ -124,9 +125,10 @@ class CoinSnapshot
 
     /**
      * @param DateTimeImmutable $time
-     * @return CoinSnapshot
+     *
+     * @return CoinHourSnapshot
      */
-    public function setTime(DateTimeImmutable $time): CoinSnapshot
+    public function setTime(DateTimeImmutable $time): CoinHourSnapshot
     {
         $this->time = $time;
         return $this;
@@ -142,9 +144,10 @@ class CoinSnapshot
 
     /**
      * @param float $open
-     * @return CoinSnapshot
+     *
+     * @return CoinHourSnapshot
      */
-    public function setOpen(float $open): CoinSnapshot
+    public function setOpen(float $open): CoinHourSnapshot
     {
         $this->open = $open;
         return $this;
@@ -160,9 +163,10 @@ class CoinSnapshot
 
     /**
      * @param float $close
-     * @return CoinSnapshot
+     *
+     * @return CoinHourSnapshot
      */
-    public function setClose(float $close): CoinSnapshot
+    public function setClose(float $close): CoinHourSnapshot
     {
         $this->close = $close;
         return $this;
@@ -178,9 +182,10 @@ class CoinSnapshot
 
     /**
      * @param float $high
-     * @return CoinSnapshot
+     *
+     * @return CoinHourSnapshot
      */
-    public function setHigh(float $high): CoinSnapshot
+    public function setHigh(float $high): CoinHourSnapshot
     {
         $this->high = $high;
         return $this;
@@ -196,9 +201,10 @@ class CoinSnapshot
 
     /**
      * @param float $low
-     * @return CoinSnapshot
+     *
+     * @return CoinHourSnapshot
      */
-    public function setLow(float $low): CoinSnapshot
+    public function setLow(float $low): CoinHourSnapshot
     {
         $this->low = $low;
         return $this;
@@ -214,9 +220,10 @@ class CoinSnapshot
 
     /**
      * @param float $volumeFrom
-     * @return CoinSnapshot
+     *
+     * @return CoinHourSnapshot
      */
-    public function setVolumeFrom(float $volumeFrom): CoinSnapshot
+    public function setVolumeFrom(float $volumeFrom): CoinHourSnapshot
     {
         $this->volumeFrom = $volumeFrom;
         return $this;
@@ -232,9 +239,10 @@ class CoinSnapshot
 
     /**
      * @param float $volumeTo
-     * @return CoinSnapshot
+     *
+     * @return CoinHourSnapshot
      */
-    public function setVolumeTo(float $volumeTo): CoinSnapshot
+    public function setVolumeTo(float $volumeTo): CoinHourSnapshot
     {
         $this->volumeTo = $volumeTo;
         return $this;
@@ -250,9 +258,9 @@ class CoinSnapshot
 
     /**
      * @param string $exchange
-     * @return CoinSnapshot
+     * @return CoinHourSnapshot
      */
-    public function setExchange(string $exchange): CoinSnapshot
+    public function setExchange(string $exchange): CoinHourSnapshot
     {
         $this->exchange = $exchange;
         return $this;

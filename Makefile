@@ -14,3 +14,12 @@ run: parameters local-composer up install-db
 
 pull-eth:
 		docker-compose exec php bin/console app:pull-coin-snapshot ETH
+
+pull-btc:
+		docker-compose exec php bin/console app:pull-coin-snapshot BTC
+
+pull-neo:
+		docker-compose exec php bin/console app:pull-coin-snapshot NEO
+
+pull-ada:
+		docker-compose exec php bin/console app:pull-coin-snapshot ADA

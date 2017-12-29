@@ -5,13 +5,13 @@ namespace AppBundle\Library\CryptoCompare;
 
 use DateTimeImmutable;
 
-class HistoryMinuteApiParameters
+class HistoryApiParameters
 {
     /** @var  string */
     private $fromSymbol;
 
     /** @var  string */
-    private $toSymbol = 'BTC';
+    private $toSymbol = 'USD';
 
     /** @var int */
     private $recordLimit = 2000;
@@ -32,9 +32,9 @@ class HistoryMinuteApiParameters
 
     /**
      * @param string $fromSymbol
-     * @return HistoryMinuteApiParameters
+     * @return HistoryApiParameters
      */
-    public function setFromSymbol(string $fromSymbol): HistoryMinuteApiParameters
+    public function setFromSymbol(string $fromSymbol): HistoryApiParameters
     {
         $this->fromSymbol = $fromSymbol;
         return $this;
@@ -50,9 +50,9 @@ class HistoryMinuteApiParameters
 
     /**
      * @param string $toSymbol
-     * @return HistoryMinuteApiParameters
+     * @return HistoryApiParameters
      */
-    public function setToSymbol(string $toSymbol): HistoryMinuteApiParameters
+    public function setToSymbol(string $toSymbol): HistoryApiParameters
     {
         $this->toSymbol = $toSymbol;
         return $this;
@@ -68,9 +68,9 @@ class HistoryMinuteApiParameters
 
     /**
      * @param int $recordLimit
-     * @return HistoryMinuteApiParameters
+     * @return HistoryApiParameters
      */
-    public function setRecordLimit(int $recordLimit): HistoryMinuteApiParameters
+    public function setRecordLimit(int $recordLimit): HistoryApiParameters
     {
         $this->recordLimit = $recordLimit;
         return $this;
@@ -86,9 +86,9 @@ class HistoryMinuteApiParameters
 
     /**
      * @param DateTimeImmutable $toTimestamp
-     * @return HistoryMinuteApiParameters
+     * @return HistoryApiParameters
      */
-    public function setToTimestamp(DateTimeImmutable $toTimestamp): HistoryMinuteApiParameters
+    public function setToTimestamp(DateTimeImmutable $toTimestamp): HistoryApiParameters
     {
         $this->toTimestamp = $toTimestamp;
         return $this;
@@ -104,9 +104,9 @@ class HistoryMinuteApiParameters
 
     /**
      * @param string $coinSymbol
-     * @return HistoryMinuteApiParameters
+     * @return HistoryApiParameters
      */
-    public function setCoinSymbol(string $coinSymbol): HistoryMinuteApiParameters
+    public function setCoinSymbol(string $coinSymbol): HistoryApiParameters
     {
         $this->coinSymbol = $coinSymbol;
         return $this;
