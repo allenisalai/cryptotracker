@@ -12,9 +12,9 @@ namespace AppBundle\Library\HypeSource\NewsArticle;
 use DateTime;
 use Symfony\Component\DomCrawler\Crawler;
 
-class CoinTelegraphParser implements RssFeedParserInterface
+class CoinNewsAsiaParser implements RssFeedParserInterface
 {
-    const SOURCE_NAME = 'coin-telegraph';
+    const SOURCE_NAME = 'coin-news-asia';
 
     public function getSourceName(): string
     {
@@ -23,6 +23,7 @@ class CoinTelegraphParser implements RssFeedParserInterface
 
     public function getSourceUrl(): string
     {
-        return "https://cointelegraph.com/feed";
+        return "http://www.coinnewsasia.com/feed/";
     }
+
 }

@@ -12,7 +12,7 @@ namespace AppBundle\Library\HypeSource\NewsArticle;
 use DateTime;
 use Symfony\Component\DomCrawler\Crawler;
 
-class CoinDeskParser implements HtmlSourceParserInterface
+class CoinDeskParser implements RssFeedParserInterface
 {
     const SOURCE_NAME = 'coin-desk';
 
@@ -23,31 +23,7 @@ class CoinDeskParser implements HtmlSourceParserInterface
 
     public function getSourceUrl(): string
     {
-        return "https://www.coindesk.com/";
+        return "http://feeds.feedburner.com/Coindesk?format=xml";
     }
 
-    public function getArticleList(Crawler $source): Crawler
-    {
-        return $source->filter('.article');
-    }
-
-    public function getArticleDom(Crawler $articleDom): Crawler
-    {
-        return $articleDom;
-    }
-
-    public function getArticleTitle(Crawler $articleDom): string
-    {
-        return trim($articleDom->filter( 'h3')->text());
-    }
-
-    public function getArticleUrl(Crawler $articleDom): string
-    {
-        return $articleDom->filter('a.fade')->attr('href');
-    }
-
-    public function getArticleDate(Crawler $articleDom): DateTime
-    {
-        return new DateTime($articleDom->filter('time')->attr('datetime'));
-    }
 }

@@ -4,11 +4,15 @@ namespace AppBundle\Entity;
 
 use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Index;
 
 /**
  * CoinHourSnapshot
  *
- * @ORM\Table(name="coin_hour_snapshot")
+ * @ORM\Table(name="coin_hour_snapshot",
+ *     indexes={
+ *          @Index(name="coin_hour_search_idx", columns={"coin_symbol", "time"})
+ * })
  * @ORM\Entity(repositoryClass="AppBundle\Repository\CoinHourSnapshotRepository")
  */
 class CoinHourSnapshot

@@ -12,7 +12,7 @@ namespace AppBundle\Library\HypeSource\NewsArticle;
 use DateTime;
 use Symfony\Component\DomCrawler\Crawler;
 
-class CryptoCoinsNewsParser implements HtmlSourceParserInterface
+class CryptoCoinsNewsParser implements RssFeedParserInterface
 {
     const SOURCE_NAME = 'crypto-coin-news';
 
@@ -23,7 +23,7 @@ class CryptoCoinsNewsParser implements HtmlSourceParserInterface
 
     public function getSourceUrl(): string
     {
-        return "https://www.cryptocoinsnews.com/";
+        return "https://www.ccn.com/feed/";
     }
 
     public function getArticleList(Crawler $source): Crawler
